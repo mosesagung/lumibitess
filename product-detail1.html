@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donut Tiramisu - Nama Toko</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/product-detail.css">
+    <style>
+        .btn-wa {
+            background-color: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-wa:hover {
+            background-color: #20b955;
+        }
+
+        .product-card {
+            width:auto; /* atau atur sesuai kebutuhan */
+            height:auto ;
+            flex-direction: column;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .main-image .imge{
+            width: 500px;
+            height: 500px;
+
+        }
+
+        .main-image{
+            width: 500;
+            height: 500px;
+        }
+
+
+        .flavor-option {
+            padding: 10px 20px;
+            border: 2px solid #ddd;
+            background-color: #fff;
+            color: #333;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+          }
+          
+          .flavor-option:hover {
+            border-color: #ff8a00;
+            background-color: #fff6e5;
+            color: #ff8a00;
+          }
+          
+          .flavor-option.active {
+            background-color: #181817;
+            border-color: #2d2c2a;
+            color: #fff;
+          }
+    </style>
+</head>
+<body>
+
+
+   
+
+
+    
+    <!-- Header -->
+    <header class="main-header">
+        <!-- Isi header sama seperti sebelumnya -->
+    </header>
+
+    <main class="product-detail-page">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.php">Home</a> / 
+                <a href="products.php">Menu</a> / 
+                <span>Donut Tiramisu</span>
+            </div>
+            
+            <div class="product-detail-container">
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img src="assets/img/produk1.jpg" alt="Donut Tiramisu" id="main-product-image" class="imge">
+                    </div>
+                    
+                </div>
+                
+                <div class="product-info">
+                    <h1 class="product-title">Donut Tiramisu</h1>
+                    
+                  
+                    
+                    <div class="product-price">
+                        <span class="current-price">Rp 12.000</span>
+                        <!-- <span class="original-price">Rp 20.000</span>
+                        <span class="discount">-25%</span> -->
+                    </div>
+                    
+                    <div class="product-description">
+                        <p>Donut premium dengan rasa tiramisu autentik, dilapisi cream cheese dan bubuk coklat. Dibuat dengan bahan-bahan pilihan dan dipanggang bukan digoreng.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Rasa tiramisu asli</li>
+                            <li><i class="fas fa-check"></i> Topping cream cheese lembut</li>
+                            <li><i class="fas fa-check"></i> Taburan bubuk coklat</li>
+                            <li><i class="fas fa-check"></i> Dipanggang, lebih sehat</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="product-variations">
+                        <div class="variation">
+                            <h3>Varian Rasa:</h3>
+                            <div class="flavor-options">
+                                <button class="flavor-option active" data-flavor="tiramisu">Tiramisu</button>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="variation">
+                            <h3>Jumlah:</h3>
+                            <div class="quantity-selector">
+                                <button class="quantity-btn minus" type="button"><i class="fas fa-minus"></i></button>
+                                <input type="number" id="qty" value="1" min="1" max="12">
+                                <button class="quantity-btn plus" type="button"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="product-actions">
+                        <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i> Tambah ke Keranjang</button>
+                        <button class="btn btn-outline add-to-wishlist"><i class="far fa-heart"></i> Wishlist</button>
+                    </div>
+    
+                    <div style="margin-top: 20px;">
+                        <button class="btn-wa" onclick="sendToWhatsApp()">
+                            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                        </button>
+                    </div>
+                    
+                   
+                </div>
+            </div>
+            
+            <div class="product-tabs">
+                <ul class="tab-nav">
+                    <li class="active" data-tab="description">Deskripsi</li>
+                    <!-- <li data-tab="ingredients">Komposisi</li>
+                    <li data-tab="reviews">Ulasan</li> -->
+                </ul>
+                
+                <div class="tab-content active" id="description">
+                    <h2>Deskripsi Produk</h2>
+                    <p>Donut Tiramisu kami adalah kreasi spesial yang memadukan cita rasa Italia dengan teknik pembuatan modern. Setiap donat dibuat dengan teliti menggunakan bahan-bahan premium:</p>
+                    <ul>
+                        <li>Mascarpone cheese asli Italia untuk cream topping</li>
+                        <li>Bubuk kopi spesial untuk aroma tiramisu</li>
+                        <li>Coklat bubuk berkualitas tinggi</li>
+                        <li>Adonan donat tanpa pengawet</li>
+                    </ul>
+                    <p>Donat ini dipanggang dengan suhu terkontrol untuk mendapatkan tekstur lembut di dalam dan sedikit renyah di luar.</p>
+                </div>
+                
+                <div class="tab-content" id="ingredients">
+                    <h2>Komposisi</h2>
+                    <table class="specs-table">
+                        <tr>
+                            <th>Bahan Utama</th>
+                            <td>Tepung terigu, mascarpone cheese, gula, telur, kopi instan, coklat bubuk, ragi, susu</td>
+                        </tr>
+                        <tr>
+                            <th>Berat Bersih</th>
+                            <td>85g per donat</td>
+                        </tr>
+                        <tr>
+                            <th>Kandungan</th>
+                            <td>Mengandung gluten, susu, telur, dan kafein</td>
+                        </tr>
+                        <tr>
+                            <th>Kalori</th>
+                            <td>320 kkal per porsi</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="tab-content" id="reviews">
+                    <h2>Ulasan Pelanggan</h2>
+                    <div class="review-form">
+                        <h3>Berikan Ulasan Anda</h3>
+                        <form>
+                            <div class="form-group">
+                                <label>Rating</label>
+                                <div class="rating-input">
+                                    <i class="far fa-star" data-rating="1"></i>
+                                    <i class="far fa-star" data-rating="2"></i>
+                                    <i class="far fa-star" data-rating="3"></i>
+                                    <i class="far fa-star" data-rating="4"></i>
+                                    <i class="far fa-star" data-rating="5"></i>
+                                    <input type="hidden" name="rating" id="rating-value">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="review-text">Ulasan Anda</label>
+                                <textarea id="review-text" rows="5" placeholder="Bagaimana pengalaman Anda dengan produk ini?"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Kirim Ulasan</button>
+                        </form>
+                    </div>
+                    
+                    <div class="review-list">
+                        <!-- Contoh ulasan -->
+                        <div class="review-item">
+                            <div class="reviewer-avatar">
+                                <img src="assets/img/user1.jpg" alt="Budi">
+                            </div>
+                            <div class="review-content">
+                                <div class="reviewer-name">Budi Santoso</div>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="review-date">15 Juli 2023</div>
+                                <div class="review-text">
+                                    <p>Rasanya autentik seperti tiramisu sungguhan! Teksturnya lembut dan cream cheesenya tidak terlalu manis. Akan beli lagi!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <section class="related-products">
+                <h2 class="section-title">Anda Mungkin Juga Suka</h2>
+                <div class="products-grid">
+                    <!-- Produk terkait akan dimuat di sini -->
+                      <!-- Product Card 2 - Donat Coklat -->
+                <div class="product-card">
+                    <a href="product-detail2.html" class="product-link">
+                        <div class="product-thumb">
+                            <img src="assets/img/produk2.jpg" alt="Donat Coklat">
+                            <div class="product-actions">
+                                <button class="quick-view" type="button"><i class="fas fa-eye"></i></button>
+                                <button class="add-to-wishlist" type="button"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Donat Coklat</h3>
+                            <div class="product-price">
+                                <span class="current-price">Rp 12.000</span>
+                                <!-- <span class="original-price">Rp 15.000</span> -->
+                            </div>
+                            
+                        </div>
+                    </a>
+                    <button class="add-to-cart">+ Keranjang</button>
+                </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <div class="footer-logo">
+                        <a href="index.html">
+                            <span class="logo-icon"><i class="fas fa-store-alt"></i></span>
+                            <span class="logo-text">LumiBites</span>
+                        </a>
+                    </div>
+                    <p>Toko Jualan.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/lumibites.cuisine?igsh=NG93cWgyenlmM2Vs"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/6281264502656" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+                    </div>
+                </div>
+                
+                <div class="footer-col footer-links">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Produk</a></li>
+                        <li><a href="#">Kategori</a></li>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Kontak</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col footer-links">
+                    <h3>Layanan Pelanggan</h3>
+                    <ul>
+                        <li><a href="#">Pusat Bantuan</a></li>
+                        <li><a href="#">Cara Pembelian</a></li>
+                        <li><a href="#">Pengembalian</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col footer-contact">
+                    <h3>Hubungi Kami</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Srikandi, Delima, Kec. Tampan, Kota Pekanbaru, Riau</li>
+                        <li><i class="fas fa-phone"></i> (021) 1234-5678</li>
+                        <li><i class="fas fa-envelope"></i> info@namatoko.com</li>
+                        <li><i class="fas fa-clock"></i> Senin-Minggu, 08:00-21:00 WIB</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- <div class="footer-bottom">
+                <div class="payment-methods">
+                    <img src="assets/images/payment-method1.png" alt="Payment Method">
+                    <img src="assets/images/payment-method2.png" alt="Payment Method">
+                    <img src="assets/images/payment-method3.png" alt="Payment Method">
+                    <img src="assets/images/payment-method4.png" alt="Payment Method">
+                </div>
+                <div class="copyright">
+                    &copy; 2023 NamaToko. All Rights Reserved.
+                </div>
+            </div> -->
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/product-detail.js"></script>
+
+
+    <script>
+        // Quantity adjustment
+        document.querySelector('.plus').addEventListener('click', () => {
+            let qty = document.getElementById('qty');
+            if (parseInt(qty.value) < 12) qty.value = parseInt(qty.value) + 0;
+        });
+    
+        document.querySelector('.minus').addEventListener('click', () => {
+            let qty = document.getElementById('qty');
+            if (parseInt(qty.value) > 1) qty.value = parseInt(qty.value) - 0;
+        });
+    
+        // Rasa selection
+        document.querySelectorAll('.flavor-option').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.flavor-option').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    
+        // WhatsApp Order Function
+        function sendToWhatsApp() {
+            const jumlah = document.getElementById('qty').value;
+            const rasa = document.querySelector('.flavor-option.active').getAttribute('data-flavor');
+            const hargaPerItem = 12000;
+            const total = jumlah * hargaPerItem;
+            const phone = "6282172016503" ; // ← Ganti dengan nomor WA tujuan
+    
+            const message = `Halo! Saya ingin memesan Donut Tiramisu.\nVarian: ${rasa}\nJumlah: ${jumlah}\nTotal: Rp ${total.toLocaleString('id-ID')}`;
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

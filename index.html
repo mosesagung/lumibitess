@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="id" id="home-kami">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LumiBites</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/tentang.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+<style>
+
+.hero-banner {
+    width: 100%;
+    height: 100vh; /* Penuh tinggi layar */
+    min-height: 600px; /* Backup jika vh tidak support */
+    background-size: cover; /* Pastikan gambar menutup area */
+    background-position: center; /* Fokus ke tengah */
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.hero-slide.active {
+    opacity: 1;
+   
+}
+
+
+
+</style>
+
+</head>
+<body>
+    <!-- Header -->
+   <!-- header.php -->
+<header class="main-header" >
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+        <div class="logo" >
+            <a href="index.php" style="display: flex; align-items: center; text-decoration: none;">
+                <span class="logo-icon">
+                    <img src="assets/img/logo.jpg" alt="LumiBites Logo">
+                </span>
+                <span class="logo-text">LumiBites</span>
+            </a>
+        </div>
+
+        <!-- Hamburger button (mobile only) -->
+        <button class="mobile-menu-btn" id="menuToggle" style="font-size: 24px; background: none; border: none; cursor: pointer;">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        
+
+        <!-- Navigation menu -->
+        <nav class="main-nav" id="mobileNav">
+            <ul>
+                <li><a href="#home-kami">Home</a></li>
+                <li><a href="#tentang-kami">Tentang</a></li>
+                <li><a href="#produk-unggulan">Produk</a></li>
+                <li><a href="#kontak-kami">Kontak</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+<style>
+
+.main-nav {
+    
+    max-height: 0;
+    transition: max-height 0.5s ease;
+}
+
+.main-nav.show {
+    max-height: 300px; /* Sesuaikan berapa tinggi maksimal menu */
+}
+
+
+.main-nav.show {
+    display: block;
+}
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon img {
+            height: 48px;
+            width: 48px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--accent-color, #f56a6a);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-text {
+            margin-left: 1px; /* Jarak antara logo dan teks */
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem; /* Ukuran teks disesuaikan dengan gambar */
+            font-weight: 700;
+            background: linear-gradient(45deg, #5D4037, #fff0f5);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .main-header {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-nav li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .main-nav li.active a {
+            color: #007bff;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none;
+                width: 100%;
+                background-color: #fff;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .main-nav.show {
+                display: block;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+    </style>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll("section, header");
+    const navLinks = document.querySelectorAll("nav ul li a");
+
+    window.onscroll = () => {
+        let current = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollY >= sectionTop - 150) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.parentElement.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+                link.parentElement.classList.add("active");
+            }
+
+            // Tangani scroll paling atas (scrollY == 0)
+            if (scrollY === 0 && link.getAttribute("href") === "#home-kami") {
+                link.parentElement.classList.add("active");
+            }
+        });
+    };
+});
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll("section, header");
+    const navLinks = document.querySelectorAll("nav ul li a");
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileNav = document.getElementById("mobileNav");
+
+    window.onscroll = () => {
+        let current = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollY >= sectionTop - 150) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.parentElement.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+                link.parentElement.classList.add("active");
+            }
+
+            if (scrollY === 0 && link.getAttribute("href") === "#home-kami") {
+                link.parentElement.classList.add("active");
+            }
+        });
+    };
+
+    // Ini tambahan untuk hamburger menu
+    menuToggle.addEventListener('click', function () {
+        mobileNav.classList.toggle('show');
+    });
+});
+
+</script>
+
+
+
+
+</header>
+
+
+
+
+
+    <!-- Hero Section -->
+    <section class="hero" >
+    <div class="hero-slider">
+        <!-- Slide 1 - Promo Utama -->
+        <div class="hero-slide active" 
+     style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/img/Banner Lumibites2.jpg');">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Donat Premium Lumer di Mulut!</h1>
+            <p>Rasakan kelembutan donat kami yang fresh setiap hari</p>
+            <a href="products.php" class="btn btn-primary">Pesan Sekarang</a>
+
+        </div>
+    </div>
+
+
+    
+</div>
+
+
+
+      
+    </div>
+
+    <!-- Controls -->
+    <!-- <div class="hero-slider-controls">
+        <button class="slider-prev" aria-label="Slide sebelumnya"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-next" aria-label="Slide berikutnya"><i class="fas fa-chevron-right"></i></button>
+    </div> -->
+
+    <!-- Dots Indicator -->
+    <!-- <div class="hero-slider-dots">
+        <span class="dot active" data-slide="0"></span>
+         <span class="dot active" data-slide="0"></span>
+       
+    </div> -->
+</section>
+
+    <!-- Tentang Kami Section -->
+<section class="about-section" id="tentang-kami">
+    <div class="container">
+        <h2 class="section-title">Kenapa Memilih LUMIBITES?</h2>
+        
+        <div class="about-grid">
+            <!-- Card 1 - Filosofi -->
+            <div class="about-card">
+                <div class="about-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Dibuat dengan Cinta</h3>
+                <p>Setiap donat kami dibuat secara handmade dengan bahan premium pilihan, tanpa pengawet atau pewarna buatan.</p>
+            </div>
+
+            <!-- Card 2 - Bahan -->
+            <div class="about-card">
+                <div class="about-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Dari Ubi Ungu Alami</h3>
+                <p>Donat kami menggunakan 100% ubi ungu pilihan, kaya antioksidan dan bebas tepung terigu. Rasa manis alami yang lebih sehat!</p>
+            </div>
+
+            <!-- Card 3 - Keunikan -->
+            <div class="about-card">
+                <div class="about-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Rasa "Nagih"</h3>
+                <p>Tekstur lembut berpadu dengan isian lumer yang menggoda - kombinasi sempurna manis dan gurih!</p>
+            </div>
+        </div>
+
+        <!-- Testimoni -->
+        <div class="testimonial">
+            <div class="testimonial-content">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <p>"Donat LUMIBITES itu beda! Dari pertama gigit langsung ketagihan. Lumerannya meleleh di mulut dengan rasa yang nggak terlalu manis. Favorite banget varian Tiramisunya!"</p>
+                <div class="testimonial-author">
+                    <strong>-  Pelanggan Setia</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <!-- <div class="about-cta">
+            <a href="#produk-unggulan" class="btn btn-primary">Lihat Produk Kami</a>
+            <a href="https://wa.me/6282172016503" target="_blank" class="btn btn-secondary">
+                <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+            </a>
+        </div> -->
+    </div>
+</section>
+
+<style>
+    .products-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .product-card {
+        width: 300px; /* atau atur sesuai kebutuhan */
+        height:auto ;
+        text-align: center;
+    }
+
+    .product-card .image{
+       width: 300px;
+       height: auto;
+    }
+</style>
+
+    <!-- Produk Unggulan Section -->
+    <section class="featured-products" id="produk-unggulan">
+        <div class="container">
+            <h2 class="section-title">Produk Unggulan</h2>
+            <div class="products-grid">
+               
+                
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <a href="product-detail1.html" class="product-link">
+                        <!-- <div class="product-badge">Best Seller</div> -->
+                        <div class="product-thumb">
+                            <img src="assets/img/produk1.jpg" alt="Donut Tiramisu" >
+                            <div class="product-actions">
+                                <button class="quick-view" type="button"><i class="fas fa-eye"></i></button>
+                                <button class="add-to-wishlist" type="button"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Donut Tiramisu</h3>
+                            <div class="product-price">
+                                <span class="current-price">Rp 12.000</span>
+                                <!-- <span class="original-price">Rp 20.000</span> -->
+                            </div>
+                            
+                        </div>
+                    </a>
+                   
+                </div>
+                
+                <!-- Product Card 2 - Donat Coklat -->
+                <div class="product-card" >
+                    <a href="product-detail2.html" class="product-link">
+                        <div class="product-thumb">
+                            <img src="assets/img/produk2.jpg" alt="Donat Coklat" class="image">
+                            <div class="product-actions">
+                                <button class="quick-view" type="button"><i class="fas fa-eye"></i></button>
+                                <button class="add-to-wishlist" type="button"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Donat Coklat</h3>
+                            <div class="product-price">
+                                <span class="current-price">Rp 12.000</span>
+                                <!-- <span class="original-price">Rp 15.000</span> -->
+                            </div>
+                            
+                        </div>
+                    </a>
+                   
+                </div>
+                
+                
+            </div>
+            
+            <div class="section-footer">
+                <a href="products.php" class="btn btn-outline">Lihat Semua Produk</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <!-- <section class="promo-section">
+        <div class="container">
+            <div class="promo-banner">
+                <div class="promo-content">
+                    <h2>Diskon Akhir Tahun</h2>
+                    <p>Dapatkan diskon hingga 40% untuk semua produk</p>
+                    <div class="countdown-timer">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="days">00</span>
+                            <span class="countdown-label">Hari</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">00</span>
+                            <span class="countdown-label">Jam</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">00</span>
+                            <span class="countdown-label">Menit</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">00</span>
+                            <span class="countdown-label">Detik</span>
+                        </div>
+                    </div>
+                    <a href="products.html" class="btn btn-white">Belanja Sekarang</a>
+                </div>
+                <div class="promo-image">
+                    <img src="assets/images/promo-image.png" alt="Promo Diskon">
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Testimoni Section -->
+    <!-- <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Apa Kata Pelanggan Kami</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "Produknya berkualitas dan pengiriman sangat cepat. Sangat puas dengan pelayanannya!"
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="assets/images/customer1.jpg" alt="Nama Pelanggan" class="author-avatar">
+                            <div class="author-info">
+                                <h4>Budi Santoso</h4>
+                                <div class="author-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "Harga kompetitif dan packaging sangat aman. Barang sampai dalam kondisi sempurna."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="assets/images/customer2.jpg" alt="Nama Pelanggan" class="author-avatar">
+                            <div class="author-info">
+                                <h4>Ani Wijaya</h4>
+                                <div class="author-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "Respon CS sangat cepat dan membantu. Produk sesuai deskripsi, akan belanja lagi di sini."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="assets/images/customer3.jpg" alt="Nama Pelanggan" class="author-avatar">
+                            <div class="author-info">
+                                <h4>Rudi Hermawan</h4>
+                                <div class="author-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Newsletter Section -->
+    <!-- <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Berlangganan Newsletter Kami</h2>
+                <p>Dapatkan informasi promo dan produk terbaru langsung ke email Anda</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Alamat email Anda" required>
+                    <button type="submit" class="btn btn-primary">Berlangganan</button>
+                </form>
+            </div>
+        </div>
+    </section> -->
+ <!-- footer -->
+<!-- Footer -->
+<footer class="main-footer" id="kontak-kami">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col footer-about">
+                <div class="footer-logo">
+                    <a href="index.php">
+                        <!-- <span class="logo-icon"><i class="fas fa-store-alt"></i></span> -->
+                        <span class="logo-text">LumiBites</span>
+                    </a>
+                </div>
+                <p>Toko Jualan.</p>
+                <div class="footer-social">
+                    <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
+                    <a href="https://www.instagram.com/lumibites.cuisine?igsh=NG93cWgyenlmM2Vs"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/6281264502656" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+                </div>
+            </div>
+            
+            <div class="footer-col footer-links">
+                <h3>Link Cepat</h3>
+                <ul>
+                <li><a href="#home-kami">Home</a></li>
+            <li><a href="#tentang-kami">Tentang</a></li>
+            <li><a href="#produk-unggulan">Produk</a></li>
+                    
+                </ul>
+            </div>
+            
+            
+            
+            <div class="footer-col footer-contact">
+                <h3>Kontak Kami</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Jl. Srikandi, Delima, Kec. Tampan, Kota Pekanbaru, Riau</li>
+                    <li><i class="fab fa-whatsapp"></i> 0821-7201-6503</li>
+                    <li>
+<a href="https://www.instagram.com/lumibites.cuisine?igsh=NG93cWgyenlmM2Vss" target="_blank" style="text-decoration: none; color: inherit;">
+  <i class="fab fa-instagram"></i> @lumibites
+</a>
+</li>
+                    <!-- <li><i class="fas fa-envelope"></i> info@namatoko.com</li> -->
+                    <li><i class="fas fa-clock"></i> Senin-Minggu, 08:00-21:00 WIB</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- <div class="footer-bottom">
+            <div class="payment-methods">
+                <img src="assets/images/payment-method1.png" alt="Payment Method">
+                <img src="assets/images/payment-method2.png" alt="Payment Method">
+                <img src="assets/images/payment-method3.png" alt="Payment Method">
+                <img src="assets/images/payment-method4.png" alt="Payment Method">
+            </div>
+            <div class="copyright">
+                &copy; 2023 NamaToko. All Rights Reserved.
+            </div>
+        </div> -->
+    </div>
+</footer>
+
+
+
+
+    <style>
+
+/* Hero Slider */
+.hero-slider {
+position: relative;
+width: 100%;
+height: 80vh;
+overflow: hidden;
+cursor: grab;
+user-select: none;
+}
+
+.hero-slider:active {
+cursor: grabbing;
+}
+
+.hero-slide {
+position: absolute;
+width: 100%;
+height: 100%;
+background-size: cover;
+background-position: center;
+transition: transform 0.5s ease;
+display: flex;
+align-items: center;
+}
+
+/* Dots Styling */
+.hero-slider-dots {
+position: absolute;
+bottom: 30px;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+gap: 10px;
+}
+
+.dot {
+width: 12px;
+height: 12px;
+border-radius: 50%;
+background-color: rgba(255,255,255,0.5);
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.dot.active {
+background-color: white;
+transform: scale(1.2);
+}
+
+/* Touch Friendly Controls */
+.hero-slider-controls button {
+background: rgba(255,255,255,0.2);
+border: none;
+color: white;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+font-size: 1.2rem;
+cursor: pointer;
+transition: all 0.3s ease;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+}
+
+.hero-slider-controls button:hover {
+background: rgba(255,255,255,0.4);
+}
+
+.slider-prev { left: 20px; }
+.slider-next { right: 20px; }
+
+
+    </style>
+
+
+
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+const slider = document.querySelector('.hero-slider');
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.dot');
+let currentIndex = 0;
+let startX, moveX;
+const threshold = 50;
+
+// Touch events for swipe
+slider.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+}, { passive: true });
+
+slider.addEventListener('touchmove', (e) => {
+    if (!startX) return;
+    moveX = e.touches[0].clientX;
+}, { passive: true });
+
+slider.addEventListener('touchend', () => {
+    if (!startX || !moveX) return;
+    
+    const diffX = startX - moveX;
+    if (diffX > threshold) {
+        nextSlide();
+    } else if (diffX < -threshold) {
+        prevSlide();
+    }
+    
+    startX = null;
+    moveX = null;
+});
+
+// Dot click navigation
+dots.forEach(dot => {
+    dot.addEventListener('click', function() {
+        const slideIndex = parseInt(this.getAttribute('data-slide'));
+        goToSlide(slideIndex);
+    });
+});
+
+// Button controls
+document.querySelector('.slider-prev').addEventListener('click', prevSlide);
+document.querySelector('.slider-next').addEventListener('click', nextSlide);
+
+function updateSlider() {
+    slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentIndex);
+    });
+    
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+    });
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlider();
+}
+
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlider();
+}
+
+function goToSlide(index) {
+    currentIndex = index;
+    updateSlider();
+}
+
+// Auto slide (optional)
+setInterval(nextSlide, 5000);
+});
+
+
+
+
+
+
+
+</script>
+
+<script src="assets/js/main.js"></script>
+    
+</body>
+</html>
